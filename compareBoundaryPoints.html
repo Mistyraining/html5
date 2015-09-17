@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>compareBoundaryPoints</title>
+</head>
+<body>
+    <script>
+        function compareBoundaryPoints(){
+            var boldText = document.getElementById("boldText");
+            var boldRange = document.createRange();
+            boldRange.selectNodeContents(boldText.firstChild);
+            var selection = document.getSelection();
+            if(selection.rangeCount > 0){
+                var selRange = selection.getRangeAt(0);
+                if(selRange.compareBoundaryPoints(Range.START_TO_END,boldRange)<=0){
+                    alert("选取的内容在粗体之前");
+                }else{
+                    if(selRange.compareBoundaryPoints(Range.END_TO_START,boldRange)>=0){
+                        alert("选取的内容在粗体之后");
+                    }
+                }
+            }
+        }
+    </script>
+    <div>一个人至少拥有<b id="boldText">一个梦想</b>一个理由去坚强。
+    <br/>
+        <button onclick="compareBoundaryPoints()">位置比较</button>
+    </div>
+</body>
+</html>

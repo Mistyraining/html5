@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cloneContent</title>
+</head>
+<body>
+    <script>
+        function cloneContent(){
+            var div = document.getElementById("div");
+            var rangeObj = document.createRange();
+            rangeObj.selectNodeContents(div);
+            var docFrangMent = rangeObj.cloneContents();
+            div.appendChild(docFrangMent);
+        }
+    </script>
+    <div id="div">这深夜里一片寂静，是因为你还没有听见声音。<br />
+    <button onclick="cloneContent()">移动元素</button>
+        <br />
+    </div>
+</body>
+</html>

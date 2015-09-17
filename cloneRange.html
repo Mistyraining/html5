@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cloneRange</title>
+</head>
+<body>
+    <script>
+        function cloneRange(){
+            var p = document.getElementById("p");
+            var rangeObj = document.createRange();
+            rangeObj.selectNodeContents(p);
+            var rangeClone = rangeObj.cloneRange();
+            alert(rangeClone.toString());
+        }
+    </script>
+    <p id="p">我以为人生的意义在于四处游荡流亡，其实只是掩饰至今没有找到愿意驻足的地方。</p>
+    <button onclick="cloneRange()">克隆</button>
+</body>
+</html>

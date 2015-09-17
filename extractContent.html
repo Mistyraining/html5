@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>extractContent</title>
+</head>
+<body>
+    <script>
+        function moveContent(){
+            var upDiv = document.getElementById("upDiv");
+            var downDiv = document.getElementById("downDiv");
+            var rangeObj = document.createRange();
+            rangeObj.selectNodeContents(upDiv);
+            var docFragment = rangeObj.extractContents();
+            downDiv.appendChild(docFragment);
+        }
+    </script>
+    <div id="upDiv" style="width: 300px;height: 50px; background-color: aquamarine;">Never had a dream come true</div><br />
+    <div id="downDiv" style="width: 300px;height: 50px;background-color: antiquewhite;display: block;"></div><br />
+    <button onclick="extractContent()">移动元素</button>
+</body>
+</html>

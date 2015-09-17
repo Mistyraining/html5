@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>collapse</title>
+</head>
+<body>
+    <script>
+        var rangeObj = document.createRange();
+        function selectRangeContents(){
+            var div = document.getElementById("div");
+            rangeObj.selectNode(div);
+//            rangeObj.detach();//释放掉Range内容
+        }
+        function unselect(){
+            rangeObj.collapse(false);
+        }
+        function showRange(){
+            alert(rangeObj.toString());
+        }
+    </script>
+    <div id="div" style="background-color: aquamarine;width: 200px;height:100px;">十七岁的一天和二十五岁的一天，长度是不同的。</div>
+    <button onclick="selectRangeContents()">选择元素</button>
+    <button onclick="unselect()">取消元素</button>
+    <button onclick="showRange()">显示Range内容</button>
+</body>
+</html>
